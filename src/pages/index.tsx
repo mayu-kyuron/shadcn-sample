@@ -1,6 +1,14 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +23,24 @@ export default function Home() {
         <Button variant="outline" size="lg" asChild href="/">
           <a className="underline">shadcnボタン</a>
         </Button>
+      </div>
+
+      <div className="m-16">
+        <DropdownMenu>
+          {/* shadcnメニューのトリガー部分のデザインを変更できる（ここではボタンに変更）。 */}
+          <DropdownMenuTrigger asChild>
+            <Button>shadcnメニュー</Button>
+          </DropdownMenuTrigger>
+          {/* shadcnメニューのトリガーからの距離（sideOffset）を設定したり、寄せる位置（align）を変更できる。 */}
+          <DropdownMenuContent sideOffset={6} align="start">
+            <DropdownMenuLabel>アカウント</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>プロフィール</DropdownMenuItem>
+            <DropdownMenuItem>決済</DropdownMenuItem>
+            <DropdownMenuItem>チーム</DropdownMenuItem>
+            <DropdownMenuItem>購読情報</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
