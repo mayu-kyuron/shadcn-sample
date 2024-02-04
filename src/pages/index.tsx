@@ -9,8 +9,12 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <div>
-        <Button>shadcnボタン</Button>
+      <div className="m-4">
+        {/* ・shadcnボタンのデフォルトのvariant・sizeを使用できる。
+            ・asChildを使用すると、直近の子要素（ここではaタグ）にpropsをマージできる。 */}
+        <Button variant="outline" size="lg" asChild href="/">
+          <a className="underline">shadcnボタン</a>
+        </Button>
       </div>
 
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
